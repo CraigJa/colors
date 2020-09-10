@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+    <title>Colors</title>
+    <meta name="colors" content="Background colors">
+    <meta name="CR3 Data" content="Colors">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.square {
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
+        font-size: 300px;
+        padding: 0 50px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #D3D3D3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 10px;
+}
+
+.sidenav a {
+  /*padding: 8px 8px 8px 32px;*/
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: blue;
+}
+
+.sidenav .closebtn {
+  /*position: absolute;*/
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  padding-left: 24px;
+  margin: auto;
+}
+
+.rectangle {
+  width: 200px;
+  height: 50px;
+  border: solid 2px #666;
+}
+
+.red_rectangle{
+  background: red;
+  color: red;
+}
+
+.blue_rectangle{
+  background: blue;
+  color: blue;
+}
+
+.yellow_rectangle{
+  background: yellow;
+  color: yellow;
+}
+
+.white_rectangle{
+  background: white;
+  color: white;
+}
+
+.green_rectangle{
+  background: green;
+  color: green;
+}
+
+.orange_rectangle{
+  background: orange;
+  color: orange;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body id="background">
+  
+
+<div id="mySidenav" class="sidenav">
+
+  <div class="pr-1 pl-1">
+    <button class="btn btn-primary btn-sm btn-block" type="button" onclick="closeNav()"><i class="fa fa-remove"></i> Close</button>
+  </div>
+  <hr>
+  <div>  
+    <div class="custom-control custom-checkbox" style="padding: 0 8px 0 32px; color: #818181; font-size: 25px;">
+      <input type="checkbox" class="color_select custom-control-input" id="check_red" value="red" checked>
+      <label class="custom-control-label" for="check_red">
+        <span id="check_red" class="red_rectangle rectangle">--------</span>
+      </label>
+    </div>
+
+    <div class="custom-control custom-checkbox" style="padding: 0 8px 0 32px; color: #818181; font-size: 25px;">
+      <input type="checkbox" class="color_select custom-control-input" id="check_blue" value="blue" checked>
+      <label class="custom-control-label" for="check_blue">
+        <span id="check_blue" class="blue_rectangle rectangle">--------</span>
+      </label>
+    </div>
+
+    <div class="custom-control custom-checkbox" style="padding: 0 8px 0 32px; color: #818181; font-size: 25px;">
+      <input type="checkbox" class="color_select custom-control-input" id="check_yellow" value="yellow" checked>
+      <label class="custom-control-label" for="check_yellow">
+        <span id="check_yellow" class="yellow_rectangle rectangle">--------</span>
+      </label>
+    </div>
+
+    <div class="custom-control custom-checkbox" style="padding: 0 8px 0 32px; color: #818181; font-size: 25px;">
+      <input type="checkbox" class="color_select custom-control-input" id="check_white" value="white" checked>
+      <label class="custom-control-label" for="check_white">
+        <span id="check_white" class="white_rectangle rectangle">--------</span>
+      </label>
+    </div>
+
+    <div class="custom-control custom-checkbox" style="padding: 0 8px 0 32px; color: #818181; font-size: 25px;">
+      <input type="checkbox" class="color_select custom-control-input" id="check_green" value="green" checked>
+      <label class="custom-control-label" for="check_green">
+        <span id="check_green" class="green_rectangle rectangle">--------</span>
+      </label>
+    </div>
+
+    <div class="custom-control custom-checkbox" style="padding: 0 8px 0 32px; color: #818181; font-size: 25px;">
+      <input type="checkbox" class="color_select custom-control-input" id="check_orange" value="orange" checked>
+      <label class="custom-control-label" for="check_orange">
+        <span id="check_orange" class="orange_rectangle rectangle">--------</span>
+      </label>
+    </div>
+
+    <hr>
+
+    <div class="custom-control custom-checkbox" style="padding: 0 8px 0 32px; color: #818181;">
+      <input type="checkbox" class="include_numbers_select custom-control-input" id="include_numbers" checked>
+      <label class="custom-control-label" for="include_numbers">
+        Include Numbers
+      </label>
+    </div>
+
+    <hr>
+
+    
+
+  </div>
+  <div class="pr-1 pl-1">
+    <button class="btn btn-primary btn-sm btn-block" type="button" onclick="closeNav()"><i class="fa fa-remove"></i> Close</button>
+  </div>
+
+</div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<div id="number_square" class="square"><span style="font-size: 100px;">Ready!</span></div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+  $( document ).ready(function() {
+    /*change();*/
+    setInterval(change, 3000);
+  });
+
+  /* ------ GET COLORS START -----*/
+  function getColors(){
+    
+    var colors = [];
+    
+    $('input.color_select[type=checkbox]').each(function () {
+      var sThisVal = (this.checked ? $(this).val() : "");
+      if(sThisVal){
+        colors.push(sThisVal);
+      }
+    });
+
+    return colors;
+  }
+
+  function showNumbers() {
+    $('#include_numbers').is(':checked')? document.getElementById("number_square").style.display = "block" : document.getElementById("number_square").style.display = "none";
+    $('.square').text(Math.floor(Math.random() * 9) + 1  );
+  }
+
+  /* ------ GET COLORS END -----*/
+
+    /* ------ CHANGE START -----*/
+    function change() {
+      var doc = document.getElementById("background");
+      //var colors = ["white", "yellow", "red", "black", "blue", "brown", "green"];
+      var colors = getColors();
+      var randomColor;
+      if(colors.length){
+        var randomColor = colors[Math.floor(Math.random()*colors.length)];
+        doc.style.backgroundColor = randomColor;
+      }
+      
+      showNumbers();
+    }
+    /* ------ CHANGE END -----*/
+
+    
+
+function openNav() {document.getElementById("mySidenav").style.width = "150px";}
+function closeNav() {document.getElementById("mySidenav").style.width = "0";}
+</script>
+   
+</body>
+</html> 
