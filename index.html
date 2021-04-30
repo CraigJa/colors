@@ -167,14 +167,18 @@ body {
         Include Numbers
       </label>
     </div>
-    
-    <div class="custom-control" style="padding: 0 8px 0 32px; color: #818181;">
-      <input type="text" class="interval_select custom-control-input" id="interval" value"5">
-      <label class="custom-control-label" for="interval">
-        Interval in seconds
-      </label>
+
+    <hr>
+    <div style="padding: 0 8px 0 32px; color: #818181;">
+      <div class="form-group">
+        <label for="interval">Interval in seconds</label>
+        <input type="email" class="interval_select form-control" id="interval" value="5" onblur="go();"">
+        <small id="emailHelp" class="form-text text-muted">Seconds between screen changes</small>
+      </div>
     </div>
 
+    
+    
     <hr>
 
     
@@ -195,9 +199,11 @@ body {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script>
+  var timer = 0;
   $( document ).ready(function() {
     /*change();*/
-    setInterval(change, 3000);
+    
+    go();
   });
 
   /* ------ GET COLORS START -----*/
@@ -222,20 +228,31 @@ body {
 
   /* ------ GET COLORS END -----*/
 
-    /* ------ CHANGE START -----*/
-    function change() {
-      var doc = document.getElementById("background");
-      //var colors = ["white", "yellow", "red", "black", "blue", "brown", "green"];
-      var colors = getColors();
-      var randomColor;
-      if(colors.length){
-        var randomColor = colors[Math.floor(Math.random()*colors.length)];
-        doc.style.backgroundColor = randomColor;
-      }
-      
-      showNumbers();
+  function go(){
+    
+    var interval = document.getElementById("interval").value;
+    interval = interval || 5;
+
+    // End timer
+    clearInterval(timer);
+
+    timer= setInterval(change, interval*1000);
+  }
+
+  /* ------ CHANGE START -----*/
+  function change() {
+    var doc = document.getElementById("background");
+    //var colors = ["white", "yellow", "red", "black", "blue", "brown", "green"];
+    var colors = getColors();
+    
+    var randomColor;
+    if(colors.length){
+      var randomColor = colors[Math.floor(Math.random()*colors.length)];
+      doc.style.backgroundColor = randomColor;
     }
-    /* ------ CHANGE END -----*/
+    showNumbers();
+  }
+  /* ------ CHANGE END -----*/
 
     
 
